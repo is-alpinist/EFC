@@ -1,27 +1,19 @@
-== README
+== EFC
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Estimated Final Cost Modification and Reporting Application
+Ingests csv file of show numbers, allows user to update: breakage, fractionals, tax credits to arrive at NET EFC
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.1.5p273
 
-* System dependencies
+* System dependencies : production accounting software must computes gross EFC for export via CSV
 
-* Configuration
+* Configuration :none
 
-* Database creation
+* Database creation: pg
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Database initialization: pg
 
 
 Please feel free to use a different markup language if you do not plan to run
