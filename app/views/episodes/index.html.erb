@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Series Recap</h1>
+
+<div>
+<%= form_tag import_episodes_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import CSV" %>
+  <%end%> 
+</div>
+
+<div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Episode Number</th>
+      <th>CTD</th>
+      <th>ETC</th>
+      <th>EFC</th>
+      <th>Breakage</th>
+      <th>Budget</th>
+      <th>Variance</th>
+      <th colspan="35"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @episodes.each do |episode| %>
+      <tr>
+        <td><%= episode.episode_num %></td>
+        <td><%= episode.cost_to_date %></td>
+        <td><%= episode.estimate_to_complete %></td>
+        <td><%= episode.estimated_final_cost %></td>
+        <td><%= episode.breakage %></td>
+        <td><%= episode.budget %></td>
+        <td><%= episode.variance %></td>
+        
+        <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
+        <td><%= link_to 'Delete', episode, method: :delete, data: { confirm: 'Confirm Delete?' } %></td>
+      </tr>
+    <% end %>
+    <tr>
+      <th> Total All Episodes </th>
+      <th> <%= Episode.total_cost_to_date %></th>
+      <th> <%= Episode.total_estimate_to_complete %></th>
+      <th> <%= Episode.total_estimated_final_cost %></th>
+      <th> <%= Episode.total_breakage %></th>
+      <th> <%= Episode.total_budget %></th>
+      <th> <%= Episode.total_variance %></th>
+  </tr>
+  </tbody>
+  
+</table>
+</div>
+
+
+

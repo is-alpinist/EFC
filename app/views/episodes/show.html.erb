@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+    <tr>
+      <th> Episode Number           </th>
+      <th> CTD                      </th>
+      <th> ETC                      </th>
+      <th> EFC                      </th>
+      <th> Budget                   </th>
+      <th> Variance                 </th>
+</tr>
+   <tr>
+     <td> <%= @episode.episode_num %>           </td>
+     <td> <%= @episode.cost_to_date %>          </td>
+     <td> <%= @episode.estimate_to_complete %>  </td>
+     <td> <%= @episode.estimated_final_cost %>  </td>
+     <td> <%= @episode.budget %>                </td>
+     <td> <%= @episode.variance %>              </td>
+    </tr>
+  <tr> </tr>
+</table>
+  
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>

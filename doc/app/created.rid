@@ -1,0 +1,8 @@
+Wed, 30 Sep 2015 23:24:11 +0000
+README.rdoc	Sun, 27 Sep 2015 22:05:24 +0000
+app/controllers/application_controller.rb	Sun, 27 Sep 2015 22:05:24 +0000
+app/controllers/episodes_controller.rb	Wed, 30 Sep 2015 21:55:15 +0000
+app/controllers/static_pages_controller.rb	Tue, 29 Sep 2015 21:17:12 +0000
+app/helpers/application_helper.rb	Sun, 27 Sep 2015 22:05:24 +0000
+app/helpers/episodes_helper.rb	Sun, 27 Sep 2015 22:32:46 +0000
+app/models/episode.rb	Tue, 29 Sep 2015 23:16:59 +0000

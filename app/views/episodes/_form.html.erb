@@ -1,0 +1,66 @@
+<%= form_for(@episode) do |f| %>
+  <% if @episode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+      <ul>
+      <% @episode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class ="table table-striped">
+    <tr>
+      <th> Episode                  </th>
+      <th>  CTD                     </th>
+      <th>   ETC                    </th>
+      <th>   EFC                    </th>
+      <th>  Budget                  </th>
+      <th>  Variance                </th>
+      
+</tr>
+   <tr>
+    <td> <%= f.text_field :episode_num %>             </td>
+    <td> <%= f.text_field :cost_to_date %>            </td>
+    <td> <%= f.number_field :estimate_to_complete %>  </td>
+    <td> <%= f.number_field :estimated_final_cost %>  </td>
+    <td> <%= f.number_field :budget %>                </td>
+    <td> <%= f.number_field :variance %>              </td>
+    </tr>
+</table>
+    <div>
+      <table class= "table table-striped">
+    <tr> <th>Breakage</th> 
+      <th>Breakage Notes</th>
+    </tr>
+    
+    <tr> 
+      <td> <%= f.number_field :breakage %> </td>
+      <td> <%= f.text_field :breakage_notes %> </td>
+    </tr>
+    
+  <tr> </tr>
+</table>
+    </div>
+
+<div>
+      <table class= "table table-striped">
+    <tr> <th>Fractional Charges </th> 
+      <th>Fractional Notes</th>
+    </tr>
+    
+    <tr> 
+      <td> <%= f.number_field :fractional %> </td>
+      <td> <%= f.text_field :fractional_notes %> </td>
+    </tr>
+    
+  <tr> </tr>
+</table>
+    </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
