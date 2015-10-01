@@ -1,6 +1,8 @@
 class Episode < ActiveRecord::Base
   require 'csv'
   
+  before_save :calculate
+  
   def self.import(file)
     CSV.foreach(file.path, headers: true) do |row|
       
@@ -15,13 +17,12 @@ class Episode < ActiveRecord::Base
     end #end foreach  
   end #end self.import
   
-  def etc
-    estimated_final_cost-cost_to_date
+  def calculate
+    self.estimate_to_complete = (estimated_final_cost-cost_to_date)
+    self.variance = estimated_final_cost - budget - breakage
     end
   
-  def var
-    (budget + breakage) - estimated_final_cost
-  end
+ 
   
   def self.total_cost_to_date
     Episode.sum(:cost_to_date)
