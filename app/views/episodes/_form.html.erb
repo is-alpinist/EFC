@@ -22,8 +22,8 @@
       
 </tr>
    <tr>
-    <td> <%= f.text_field :episode_num %>             </td>
-    <td> <%= f.text_field :cost_to_date %>            </td>
+     <td> <%= f.text_field  :episode_num %>             </td>
+    <td> <%= f.number_field :cost_to_date %>          </td>
     <td> <%= f.number_field :estimate_to_complete %>  </td>
     <td> <%= f.number_field :estimated_final_cost %>  </td>
     <td> <%= f.number_field :budget %>                </td>
@@ -31,7 +31,7 @@
     </tr>
 </table>
     <div>
-      <table class= "table table-striped">
+      <table class= "table">
     <tr> <th>Breakage</th> 
       <th>Breakage Notes</th>
     </tr>

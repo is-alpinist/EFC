@@ -28,12 +28,12 @@
     <% @episodes.each do |episode| %>
       <tr>
         <td><%= episode.episode_num %></td>
-        <td><%= episode.cost_to_date %></td>
-        <td><%= episode.estimate_to_complete %></td>
-        <td><%= episode.estimated_final_cost %></td>
-        <td><%= episode.breakage %></td>
-        <td><%= episode.budget %></td>
-        <td><%= episode.variance %></td>
+        <td><%= number_to_currency(episode.cost_to_date) %></td>
+        <td><%= number_to_currency(episode.estimate_to_complete) %></td>
+        <td><%= number_to_currency(episode.estimated_final_cost) %></td>
+        <td><%= number_to_currency(episode.breakage) %></td>
+        <td><%= number_to_currency(episode.budget) %></td>
+        <td><%= number_to_currency(episode.variance) %></td>
         
         <td><%= link_to 'Edit', edit_episode_path(episode) %></td>
         <td><%= link_to 'Delete', episode, method: :delete, data: { confirm: 'Confirm Delete?' } %></td>
@@ -41,12 +41,12 @@
     <% end %>
     <tr>
       <th> Total All Episodes </th>
-      <th> <%= Episode.total_cost_to_date %></th>
-      <th> <%= Episode.total_estimate_to_complete %></th>
-      <th> <%= Episode.total_estimated_final_cost %></th>
-      <th> <%= Episode.total_breakage %></th>
-      <th> <%= Episode.total_budget %></th>
-      <th> <%= Episode.total_variance %></th>
+      <th> <%= number_to_currency(Episode.total_cost_to_date) %></th>
+      <th> <%= number_to_currency(Episode.total_estimate_to_complete) %></th>
+      <th> <%= number_to_currency(Episode.total_estimated_final_cost) %></th>
+      <th> <%= number_to_currency(Episode.total_breakage) %></th>
+      <th> <%= number_to_currency(Episode.total_budget) %></th>
+      <th> <%= number_to_currency(Episode.total_variance) %></th>
   </tr>
   </tbody>
   
